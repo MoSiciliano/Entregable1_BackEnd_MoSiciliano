@@ -4,4 +4,4 @@
 
 This is the first comment on my BackEnd programming course project at CoderHouse, I invite you to leave me suggestions and comments! Thanks for watching me ❤️
 
--More![Alt text](image.png)
+-More!
