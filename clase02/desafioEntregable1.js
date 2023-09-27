@@ -39,6 +39,7 @@ class ProductManager {
 }
 
 let productManager = new ProductManager();
+console.log("Yours products are:", productManager.getProduct());
 productManager.addProduct({
   title: "Producto prueba",
   description: "Este es un producto prueba",
@@ -47,7 +48,7 @@ productManager.addProduct({
   code: "abc123",
   stock: "25",
 });
-console.log("Yours products are:", productManager.getProduct());
+console.log("Yours products are now:", productManager.getProduct());
 //For return error => this product with code:'${code}' already exist
 productManager.addProduct({
   title: "Producto prueba A",
