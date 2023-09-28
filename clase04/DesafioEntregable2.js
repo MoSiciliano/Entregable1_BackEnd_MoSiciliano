@@ -48,33 +48,47 @@ class ProductManager {
     code,
     stock,
   }) {
+    //Si no pasan un ID por parametro manejo erorr
     if (!id) {
       throw new Error(`you must provide us with an id⛔`);
     }
-    const products = await getJSONFromFile(this.path);
-    let findCode = products.find(
+    //Traigo el array de productos pata manejarlo
+    const data = await getJSONFromFile(this.path);
+    //Verifico que no exista otro producto con !== ID (que el que están pasando),
+    // que tenga el mismo código que estan pasando para actualizar,
+    //ya que no pueden haber 2 productos con el mismo código
+    let findCodeRepeat = data.find(
       (product) => product.code === code && product.id !== id
     );
-    if (findCode) {
+    if (findCodeRepeat) {
       throw new Error(
-        `The provided code ${findCode.code} already exist, cant't update`
+        `The provided code ${findCode.code} already exist in other product, you can't update`
       );
     }
+    //Llamo al producto que tiene ese ID que pasan por parametros
     let product = await this.getProductById(id);
+
+    //Creo una ciclo que verifica la condición, si devuelve = string = no se encontro el producto = error => voy al else
+    // : si devuelve el producto sigue el if
     if (typeof product !== "string") {
+      //le paso los nuevos valores al producto, creo una condición x cada key,
+      //que si no esta pasando un nuevo valor => se mantenga el original
       product.title = title || product.title;
       product.description = description || product.description;
       product.price = price || product.price;
       product.thumbanil = thumbanil || product.thumbanil;
       product.code = code || product.code;
       product.stock = stock || product.stock;
-
-      const data = await getJSONFromFile(this.path);
+      //aca encuentro la posición en el array del producto que quiere actualizar
       const productIndex = data.findIndex((product) => product.id === id);
+      // actualizo el producto que me indican por ID, con la nueva data
       data[productIndex] = product;
+      //vuelvo a escribir el JSON con los productos actualizados, y los que ya estaban se mantienen
       await saveJSONToFile(this.path, data);
     } else {
-      console.log("No entra");
+      console.log(
+        `Doesn't exist product with ID:${id}, try with other product `
+      );
     }
   }
   async deleteProduct(id) {
