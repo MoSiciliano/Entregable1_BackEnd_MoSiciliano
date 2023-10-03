@@ -1,0 +1,92 @@
+[
+	{
+		"id": 1,
+		"title": "Product A",
+		"description": "Description product A",
+		"price": 200,
+		"thumbanil": "without image",
+		"code": "abc123",
+		"stock": 5
+	},
+	{
+		"id": 2,
+		"title": "Product New M",
+		"description": "Description product M",
+		"price": 300,
+		"thumbanil": "without image",
+		"code": "nuevo code 12",
+		"stock": 10
+	},
+	{
+		"id": 3,
+		"title": "Product D",
+		"description": "Description product D",
+		"price": 200,
+		"thumbanil": "without image",
+		"code": "abc345",
+		"stock": 5
+	},
+	{
+		"id": 4,
+		"title": "Product E",
+		"description": "Description product E",
+		"price": 200,
+		"thumbanil": "without image",
+		"code": "abc4",
+		"stock": 5
+	},
+	{
+		"id": 5,
+		"title": "Product F",
+		"description": "Description product F",
+		"price": 200,
+		"thumbanil": "without image",
+		"code": "abc5",
+		"stock": 5
+	},
+	{
+		"id": 6,
+		"title": "Product G",
+		"description": "Description product G",
+		"price": 200,
+		"thumbanil": "without image",
+		"code": "abc6",
+		"stock": 5
+	},
+	{
+		"id": 7,
+		"title": "Product H",
+		"description": "Description product H",
+		"price": 200,
+		"thumbanil": "without image",
+		"code": "abc7",
+		"stock": 5
+	},
+	{
+		"id": 8,
+		"title": "Product I",
+		"description": "Description product I",
+		"price": 200,
+		"thumbanil": "without image",
+		"code": "abc8",
+		"stock": 5
+	},
+	{
+		"id": 9,
+		"title": "Product J",
+		"description": "Description product J",
+		"price": 200,
+		"thumbanil": "without image",
+		"code": "abc9",
+		"stock": 5
+	},
+	{
+		"id": 10,
+		"title": "Product K",
+		"description": "Description product K",
+		"price": 200,
+		"thumbanil": "without image",
+		"code": "abc10",
+		"stock": 5
+	}
+]
