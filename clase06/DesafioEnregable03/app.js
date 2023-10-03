@@ -21,7 +21,7 @@ app.get("/products", async (req, res) => {
 app.get("/products/:productID", async (req, res) => {
   const { productID } = req.params;
   const getProduct = await productManager.getProductById(parseInt(productID));
-  res.send(getProduct);
+  getProduct ? res.send(getProduct) : res.send("You must provide us an ID");
 });
 app.listen(port, () => {
   console.log(`El servidor esta corriendo en el puerto: ${port}`);
