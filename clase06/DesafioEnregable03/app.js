@@ -5,7 +5,12 @@ const app = express();
 const ProductManager = require("./ProductManager3");
 const port = 8080;
 const productManager = new ProductManager("./products.JSON");
-
+app.get("/", (req, res) => {
+  const welcome = `<body style="background-color: aqua; display:flex; justify-content: center;align-items: center;">
+  <h1 style='color:rgb(155, 85, 185);text-align: center;'>Welcome to my ecommerce</h1>
+</body>`;
+  res.send(welcome);
+});
 app.get("/products", async (req, res) => {
   const limit = parseInt(req.query.limit);
   const getProducts = await productManager.getProducts();
